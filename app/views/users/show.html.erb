@@ -1,0 +1,11 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card text-center">
+    <div class="card-body">
+      <h1>Doctor: <%= current_user.name %></h1>
+      <br>
+      <h3>Email: <%= current_user.email %></h3>
+      <br>
+      <%= link_to "Edit my profile", edit_user_registration_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

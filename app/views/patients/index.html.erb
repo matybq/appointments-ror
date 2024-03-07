@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%=current_user.name%> patients</h1>
+
+
+<div id="patients">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Upd/Del</th>
+      </tr>
+    </thead>
+
+    <tbody>
+          <% @patients.sort_by(&:name).each do |patient| %>        
+            <tr>
+              <td> <%= patient.name %> </td>
+              <td> <%= patient.email %> </td>
+              <td> <%= patient.age %> </td>
+              <td> <%= link_to "Edit", edit_patient_path(patient), class: 'btn btn-primary' %>
+                   <%= link_to "Delete", patient_path(patient), class: 'btn btn-danger' %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+
+  </table>
+
+</div>
+

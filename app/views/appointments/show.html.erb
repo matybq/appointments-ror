@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @appointment %>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card text-center">
+    <div class="card-body">
+        <h2>Appointment with: <br><%= @appointment.patient.name %></h2>
+        <br>
+        <h3>Day: <%= @appointment.date.strftime("%d/%m/%Y") %></h3>
+        <h3>At: <%= @appointment.time&.strftime("%H:%M") %></h3>
+        <br>
+        <%= link_to 'Edit', edit_appointment_path(@appointment), class: 'btn btn-primary' %>
+        <%= button_to 'Delete', @appointment , method: :delete, class: 'btn btn-danger' %>
+        <br>
+        <%= link_to 'See today`s appointments', appointments_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card text-center">
+    <div class="card-body">
+      <h1>Patient data </h1>
+      <br>
+      <h2> Name: <%= @patient.name %></h2>
+      <h3>Sex: <%= @patient.sex %></h3>
+      <h3>Age: <%= @patient.age %></h3>
+      <h3>Email: <%= @patient.email %></h3>
+      <br>
+      <%= link_to "Edit this patient", edit_patient_path(@patient) , class: "btn btn-primary" %>
+      <%= button_to "Delete this patient", @patient, method: :delete, class: 'btn btn-danger' %> </td>
+    </div>
+  </div>
+</div>
+
